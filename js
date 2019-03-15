@@ -78,13 +78,18 @@ var arr =['George,John','Thomas','James','Adrew','Martin'];
 var newArray = arr.splice(2,0,"William"); //从newArray[2]位置插入数据William
 
 newArray=['George','John','William','Thomas','James','Adrew','Martin']
+
 ===============================================================================================
 
 event.preventDefault()与event.stopPropagation()是jquery的方法，但其实它们是js本身自带的方法了
 
 event.preventDefault()用法
 
-该方法将通知 Web 浏览器不要执行与事件关联的默认动作（如果存在这样的动作）。例如，<input type='' /> 如果 type 属性是 "submit"，在事件传播的任意阶段可以调用任意的事件句柄，通过调用该方法，可以阻止提交表单。注意，如果 Event 对象的 cancelable 属性是 fasle，那么就没有默认动作，或者不能阻止默认动作。无论哪种情况，调用该方法都没有作用。
+该方法将通知 Web 浏览器不要执行与事件关联的默认动作（如果存在这样的动作）。例如，<input type='' /> 
+
+如果 type 属性是 "submit"，在事件传播的任意阶段可以调用任意的事件句柄，通过调用该方法，可以阻止提交表单。
+
+注意，如果 Event 对象的 cancelable 属性是 fasle，那么就没有默认动作，或者不能阻止默认动作。无论哪种情况，调用该方法都没有作用。
 
 该方法将通知 Web 浏览器不要执行与事件关联的默认动作（如果存在这样的动作）。
 
@@ -96,7 +101,9 @@ event.preventDefault()用法
 
 event.stopPropagation()用法
 
-该方法将停止事件的传播，阻止它被分派到其他 Document 节点。在事件传播的任何阶段都可以调用它。注意，虽然该方法不能阻止同一个 Document 节点上的其他事件句柄被调用，但是它可以阻止把事件分派到其他节点
+该方法将停止事件的传播，阻止它被分派到其他 Document 节点。在事件传播的任何阶段都可以调用它。
+
+注意，虽然该方法不能阻止同一个 Document 节点上的其他事件句柄被调用，但是它可以阻止把事件分派到其他节点
 
 该方法将停止事件的传播，阻止它被分派到其他 Document 节点。在事件传播的任何阶段都可以调用它。
 
@@ -109,9 +116,13 @@ js的sort()方法
 
 说明
 
-如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较。
+如果调用该方法时没有使用参数，将按字母顺序对数组中的元素进行排序，说得更精确点，是按照字符编码的顺序进行排序。
 
-array.sort()方法默认是升序排序，如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：
+要实现这一点，首先应把数组的元素都转换成字符串（如有必要），以便进行比较。
+
+array.sort()方法默认是升序排序，如果想按照其他标准进行排序，就需要提供比较函数，该函数要比较两个值，
+
+然后返回一个用于说明这两个值的相对顺序的数字。比较函数应该具有两个参数 a 和 b，其返回值如下：
 
 若 a 小于 b，在排序后的数组中 a 应该出现在 b 之前，则返回一个小于 0 的值。
 
@@ -120,6 +131,113 @@ array.sort()方法默认是升序排序，如果想按照其他标准进行排�
 若 a 大于 b，则返回一个大于 0 的值。
 
 简单点：比较函数两个参数a和b，返回a
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+普通数组 升序
+
+var arr = [4,3,6,5,7,2,1];
+
+arr.sort();
+
+console.log(arr);
+
+//输出结果[1,2,3,4,5,6,7]
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+普通数据 降序
+
+var arr = [4,3,6,5,7,2,1];
+
+arr.sort();
+
+arr.sort(function(a,b){
+
+    return b-a;
+});
+console.log(arr);
+
+//输出结果[7,6,5,4,3,2,1]
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+对象数组排序
+
+var arr= [ 
+    { 'sortNo': 2},
+    { 'sortNo': 1},
+    { 'sortNo': 5},
+    { 'sortNo': 6},
+    { 'sortNo': 7},
+    { 'sortNo': 3},
+    { 'sortNo': 9},
+    { 'sortNo': 4},
+    { 'sortNo': 0}
+];
+arr.sort(function(a, b){
+        return a.sortNo - b.sortNo;
+});
+console.log(arr);
+//输出结果
+//{ 'sortNo': 0}
+//{ 'sortNo': 1}
+//{ 'sortNo': 2}
+//{ 'sortNo': 3}
+//{ 'sortNo': 4}
+//{ 'sortNo': 5}
+//{ 'sortNo': 6}
+//{ 'sortNo': 7}
+//{ 'sortNo': 9}
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+对象数组多条件排序
+
+（此例如果sortNo相同，则按sortNo2从大到小）
+ 
+ var arr= [ 
+    { 'sortNo': 2, 'sortNo2': 3},
+    { 'sortNo': 1, 'sortNo2': 3},
+    { 'sortNo': 5, 'sortNo2': 3},
+    { 'sortNo': 6, 'sortNo2': 3},
+    { 'sortNo': 7, 'sortNo2': 3},
+    { 'sortNo': 3, 'sortNo2': 4},
+    { 'sortNo': 3, 'sortNo2': 2},
+    { 'sortNo': 3, 'sortNo2': 1},
+    { 'sortNo': 3, 'sortNo2': 3},
+    { 'sortNo': 8, 'sortNo2': 3},
+    { 'sortNo': 4, 'sortNo2': 1},
+    { 'sortNo': 4, 'sortNo2': 2}
+];
+arr.sort(function(a, b){
+    if (a.sortNo === b.sortNo) {
+            return b.sortNo2 - a.sortNo2;
+    } else {
+            return a.sortNo - b.sortNo;
+    }
+});
+console.log(arr); 
+
+//输出结果
+//{ 'sortNo': 1, 'sortNo2': 3}
+//{ 'sortNo': 2, 'sortNo2': 3}
+//{ 'sortNo': 3, 'sortNo2': 4}
+//{ 'sortNo': 3, 'sortNo2': 3}
+//{ 'sortNo': 3, 'sortNo2': 2}
+//{ 'sortNo': 3, 'sortNo2': 1}
+//{ 'sortNo': 4, 'sortNo2': 2}
+//{ 'sortNo': 4, 'sortNo2': 1}
+//{ 'sortNo': 5, 'sortNo2': 3}
+//{ 'sortNo': 6, 'sortNo2': 3}
+//{ 'sortNo': 7, 'sortNo2': 3}
+//{ 'sortNo': 8, 'sortNo2': 3}
+=============================================================================
+
+
+
+
+
+
 
 
 
