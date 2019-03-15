@@ -232,6 +232,51 @@ console.log(arr);
 //{ 'sortNo': 7, 'sortNo2': 3}
 //{ 'sortNo': 8, 'sortNo2': 3}
 =============================================================================
+js获取页面元素距离浏览器工作区顶端的距离
+
+先介绍几个属性：（暂时只测了IE和firefox，实际上我工作中用到的最多的是chrome）
+
+ 网页被卷起来的高度/宽度（即浏览器滚动条滚动后隐藏的页面内容高度）
+
+(javascript)        document.documentElement.scrollTop //firefox
+
+(javascript)        document.documentElement.scrollLeft //firefox
+
+(javascript)        document.body.scrollTop //IE
+
+(javascript)        document.body.scrollLeft //IE
+
+(jqurey)             $(window).scrollTop() 
+
+(jqurey)             $(window).scrollLeft()
+
+ 网页工作区域的高度和宽度  
+
+(javascript)       document.documentElement.clientHeight// IE firefox       
+
+(jqurey)             $(window).height()
+
+ 元素距离文档顶端和左边的偏移值  
+
+(javascript)        DOM元素对象.offsetTop //IE firefox
+
+(javascript)        DOM元素对象.offsetLeft //IE firefox
+
+(jqurey)             jq对象.offset().top
+
+(jqurey)             jq对象.offset().left
+
+
+获取页面元素距离浏览器工作区
+
+ 页面元素距离浏览器工作区顶端的距离  =  元素距离文档顶端偏移值  -   网页被卷起来的高度  
+
+即：
+
+ 页面元素距离浏览器工作区顶端的距离 =  DOM元素对象.offsetTop  -  document.documentElement.scrollTop 
+ =====================================================================================================
+
+ 
 
 
 
