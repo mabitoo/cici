@@ -10,3 +10,4 @@ Boolean(0) // false
 Boolean(NaN) // false 
 Boolean('') // false
 --------------------- 
+1
