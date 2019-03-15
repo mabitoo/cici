@@ -78,5 +78,30 @@ var arr =['George,John','Thomas','James','Adrew','Martin'];
 var newArray = arr.splice(2,0,"William"); //从newArray[2]位置插入数据William
 
 newArray=['George','John','William','Thomas','James','Adrew','Martin']
+===============================================================================================
+
+event.preventDefault()与event.stopPropagation()是jquery的方法，但其实它们是js本身自带的方法了
+
+event.preventDefault()用法
+
+该方法将通知 Web 浏览器不要执行与事件关联的默认动作（如果存在这样的动作）。例如，<input type='' /> 如果 type 属性是 "submit"，在事件传播的任意阶段可以调用任意的事件句柄，通过调用该方法，可以阻止提交表单。注意，如果 Event 对象的 cancelable 属性是 fasle，那么就没有默认动作，或者不能阻止默认动作。无论哪种情况，调用该方法都没有作用。
+
+该方法将通知 Web 浏览器不要执行与事件关联的默认动作（如果存在这样的动作）。
+
+例如，如果 type 属性是 "submit"，在事件传播的任意阶段可以调用任意的事件句柄，通过调用该方法，可以阻止提交表单。
+
+注意，如果 Event 对象的 cancelable 属性是 fasle，那么就没有默认动作，或者不能阻止默认动作。无论哪种情况，调用该方法都没有作用。
+
+ 
+
+event.stopPropagation()用法
+
+该方法将停止事件的传播，阻止它被分派到其他 Document 节点。在事件传播的任何阶段都可以调用它。注意，虽然该方法不能阻止同一个 Document 节点上的其他事件句柄被调用，但是它可以阻止把事件分派到其他节点
+
+该方法将停止事件的传播，阻止它被分派到其他 Document 节点。在事件传播的任何阶段都可以调用它。
+
+注意:虽然该方法不能阻止同一个 Document 节点上的其他事件句柄被调用，但是它可以阻止把事件分派到其他节点。
+
+event是DOM的事件方法，所以不是单独使用，比如指定DOM
 
 
