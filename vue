@@ -31,3 +31,23 @@ $router router实例对象
 beforeRouterEnter()进去组件前钩子函数
 
 beforeRouterleave() 离开组件前钩子函数
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+路由对象信息
+
+一个路由信息对象表示当前激活的路由状态信息 每次成功的导航后都会产生一个新的对象
+
+path 字符串 ，对象当前路由的路径
+
+params对象 包含动态路由参数
+
+query对象  ，URL查询参数
+
+hash字符串，当前路由的hash值
+
+fullpath 字符串， URL包含查询参数和hash的完整路径
+
+mathed数组，包含当前路由的所有嵌套路径片段的 路由记录
+
+name字符串 ，当前路由的名称
