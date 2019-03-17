@@ -56,3 +56,27 @@ name字符串 ，当前路由的名称
   console.log(
   this.$route.params)       查询动态ID   userId
   }
+  ==============================================================================
+  :to="{path:'',query:{info:'follow'}}"
+  
+ {{$route.query}}  查询 
+ =============================================================================
+ 动画
+ .v-enter{opacity:0;}                  定义进入过度的开始状态
+.v-enter-to{ opacity:1;}               定义进入的结束状态
+.v-enter-active{transition:1s;}        定义进入的活动状态
+.v-leave{opacity:0;}                   定义离开过度的开始状态
+.v-leave-to{opacity:1;}                定义离开的结束状态
+.v-leave-active{transition:2s;}         定义离开的活动状态
+
+ 用其他动画效果 可以改.v- 比如  .left-enter
+
+
+ 过渡模式
+ in-out:新元素先进行过渡，完成之后当前元素过渡离开
+ out-in:当先元素进行过渡，完成之后新元素过渡进入  用的多
+ 
+ <transition mode="out-in">  <router-view class="center"></router-view>
+    <router-view name="slider"></router-view></transition>
+===================================================================================
+ 
