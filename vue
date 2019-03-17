@@ -69,14 +69,27 @@ name字符串 ，当前路由的名称
 .v-leave-to{opacity:1;}                定义离开的结束状态
 .v-leave-active{transition:2s;}         定义离开的活动状态
 
- 用其他动画效果 可以改.v- 比如  .left-enter
+ 用其他动画效果 可以改.v- 比如  .left-enter 需要在 <transition mode="out-in">   加上name="left"
 
 
  过渡模式
  in-out:新元素先进行过渡，完成之后当前元素过渡离开
  out-in:当先元素进行过渡，完成之后新元素过渡进入  用的多
  
- <transition mode="out-in">  <router-view class="center"></router-view>
+ <transition name="left" mode="out-in">  <router-view class="center"></router-view>
     <router-view name="slider"></router-view></transition>
 ===================================================================================
+<router-link :to="{path:'/about#abc'}" event='mouseover'>about</router-link>
+
+event='mouseover' 鼠标悬停   组件展开
+===============================================================
+ 路由元信息
+ 
+ 在路由配置中  可以配置一些数据  在用于路由对象信息对象中
+ 
+ 访问meta 中数据， $route.meta
+ ======================================================================
+ 动画动效
+  提供了transition的封装组件  ，添加过渡动画
+  添加删除css类名
  
