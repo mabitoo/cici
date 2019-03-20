@@ -93,3 +93,14 @@ event='mouseover' 鼠标悬停   组件展开
   提供了transition的封装组件  ，添加过渡动画
   添加删除css类名
  
+==============================================================================
+插件的写法 
+vue.prototype.$custom = '这是自定义属性'
+console.log(this.$custom)
+
+xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+let obj = { install : function (Vue , option){ console.log(Vue)  console.log(option)}}
+
+Vue.ues(obj,{a:1})
+======================================================================
