@@ -104,3 +104,20 @@ let obj = { install : function (Vue , option){ console.log(Vue)  console.log(opt
 
 Vue.ues(obj,{a:1})
 ======================================================================
+ methods:{
+  backHandle(){
+  this.$router.back()  后退
+  },
+  forwordHandle(){
+  this.$router.forward()  前进
+  },
+  goHandle(){
+   this.$router.go(-2)   走几步       不符合步数 没反映
+  },
+  pushHandle(){
+  //this.$router.push('/document')
+  this.$router.push({path:'/document'}) 去的位置
+  },
+   replaceHandle(){
+  //this.$router.replace('/document')
+  this.$router.replace({path:'/document'})  替换
