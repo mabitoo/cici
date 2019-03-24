@@ -28,9 +28,28 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 $router router实例对象
 
+实例上 beforeEach afterEach
+
+组件内的
+
 beforeRouterEnter()进去组件前钩子函数
 
+beforeRouteUpdate()进入组件中的钩子函数
+
 beforeRouterleave() 离开组件前钩子函数
+
+单个路由中 ：beforeEnter
+
+钩子函数接受的参数
+
+to: 要进入的目标路由对象 到哪里去
+
+form 正要离开导航的路由对象 从哪里来
+
+next 用于决定要跳转或者取消导航
+
+
+
 
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
@@ -98,11 +117,14 @@ event='mouseover' 鼠标悬停   组件展开
 vue.prototype.$custom = '这是自定义属性'
 console.log(this.$custom)
 
+let local = {save (key,value){localSrorange.setItem(key,JSON.stringify(value)}
+
+export default { install :function (vm){vm.prototype.$local=loacl}}
 xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 let obj = { install : function (Vue , option){ console.log(Vue)  console.log(option)}}
 
-Vue.ues(obj,{a:1})
+Vue.use(obj,{a:1})
 ======================================================================
  methods:{
   backHandle(){
@@ -121,3 +143,10 @@ Vue.ues(obj,{a:1})
    replaceHandle(){
   //this.$router.replace('/document')
   this.$router.replace({path:'/document'})  替换
+  
+  
+  
+  =============================================================================
+  
+  
+  
