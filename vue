@@ -179,10 +179,45 @@ Vue.use(obj,{a:1})
         
         ===================================================================================
         
+     vueX   
         
         
-        
-  
+   安装 npm i vuex -- save
+   
+   Vue.use(Vuex)
+   
+   new.Vuex.Store() 定义容器
+   
+   let store = new Vuex.Store({})
+   
+   {store}
+   
+    核心概念
+    
+    store: 类似容器  包含应用的发部分状态
+    
+    一个页面只有一个store
+    状态存储是响应的
+    
+    不能直接改变store中的状态 唯一途径提交mutations
+    
+    State:包含所有应用级别状态的对象
+    
+    Getters:在组件内部获取store中状态的函数
+    
+    Mutations:唯一修改状态的事件回调函数
+    
+    Actions：包含异步操作， 提交mutation改变状态
+    
+    Modules:将Store分割成不同的模块
+    
+    Vuex辅助函数
+    
+    mapState
+    mapGetters
+    mapMutations
+    mapActions
+   
   
   
   
