@@ -147,6 +147,42 @@ Vue.use(obj,{a:1})
   
   
   =============================================================================
+   懒加载
+   
+   把不同路由对应的组件分割成不同的代码块,然后当路由被访问的时候菜加载对应组件
+   
+   vue异步组件
+    ｛
+           compoents:{resolve,rejece}=>{}}
+   ｝
+   
+   webpack代码分割功能
+   
+    require.ensure代码分块
+    
+        require.ensure(依赖 ，回调函数，【chunk名字】)
+        
+        
+        let  work =(resolve)=>{
+        return  require.ensure([],()=>{resolve(require('@/views/backend/workbench'))},'abc')
+        
+        
+        
+        import函数
+        
+        let  work =(resolve)=>{
+        return import('@/views/backend/workbench')
+        }
+        
+        
+        
+        
+        ===================================================================================
+        
+        
+        
+        
+  
   
   
   
