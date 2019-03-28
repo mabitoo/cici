@@ -217,7 +217,63 @@ Vue.use(obj,{a:1})
     mapGetters
     mapMutations
     mapActions
-   
+    ========================================================================================
+    Axios 
+    node i axios --save
+    Mock
+    模拟数据   http://easy-mock.com
+    import axios from ‘axios’
+    语法
+    axios(config)
+    axios【method】｛｝
+    
+    created(){
+    axios({
+    method:'get',
+    url:'http//ssss'
+    }).then((response)=>{console.log(response.data)}).catch((error)=>{})
+    }
+    axios.get('//http',{params:｛ABC：‘数据’｝}).then().catch()
+    
+    自定义请求实例
+    
+    创建
+    axios.create(config)
+    配置
+    {
+    baseURl:'//http',  下面请求用相对路径 get('/adc')
+    timeout:1000,超时时间
+    responseType:'josn',
+    params:{
+    book:'123'},
+    headers:{
+    'head':'miaowei',
+    'content-type':'application/x-www-form-urlencode'
+    }
+    
+    },
+    transfromRequest：【funciton(data){return queryString.string(data)}】
+    
+    取消请求
+    var CancelToken = axios.CancelToken
+    var source = CancelToken.source();
+    配置
+    cancelToken:source.token
+    捕获取消错误
+    if(axios.isCancel(error)){}
+    调用取消
+    source.cancel(操作被用户取消)
+    并发请求
+    axios.all(iterable)
+    axios.spread(callback)
+    
+    
+    
+    
+    
+    
+    
+    
   
   
   
